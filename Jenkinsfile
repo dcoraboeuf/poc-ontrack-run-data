@@ -14,5 +14,10 @@ pipeline {
                 """)
             }
         }
+        stage("Build") {
+            steps {
+                ontrackBuild(project: 'poc-ontrack-run-data', branch: BRANCH_NAME, build: BUILD_NUMBER)
+            }
+        }
     }
 }
