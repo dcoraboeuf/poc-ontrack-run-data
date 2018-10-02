@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        label "docker"
+        docker {
+            image "openjdk:8"
+        }
+    }
     stages {
         stage("Setup") {
             steps {
