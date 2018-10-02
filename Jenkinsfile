@@ -19,5 +19,15 @@ pipeline {
                 ontrackBuild(project: 'poc-ontrack-run-data', branch: BRANCH_NAME, build: BUILD_NUMBER)
             }
         }
+        stage("Tests") {
+            steps {
+                sh './gradlew clean test'
+            }
+            post {
+                always {
+                    def results = junit "build/test-results/test/*.xml"
+                }
+            }
+        }
     }
 }
