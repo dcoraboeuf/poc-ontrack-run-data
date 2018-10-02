@@ -35,8 +35,7 @@ pipeline {
                             project: 'poc-ontrack-run-data',
                             branch: BRANCH_NAME,
                             build: BUILD_NUMBER,
-                            validationStamp: "ACCEPTANCE",
-                            buildResult: currentBuild.result
+                            validationStamp: "ACCEPTANCE"
                     )
                 }
             }
